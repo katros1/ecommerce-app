@@ -34,7 +34,7 @@ export class ProductsController {
   @UseGuards(AuthenticationGuard, AuthorizeGuard)
   @Patch(':id')
   async update(@Param('id') id: string, @Body() updateProductDto: UpdateProductDto, @CurrentUser() currentUser: UserEntity ) {
-    return await this.productsService.update(+id, updateProductDto, currentUser);
+    return await this.productsService.update(+id, updateProductDto, currentUser); 
   }
 
   @Delete(':id')
